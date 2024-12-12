@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    environment:
+      - KC_DB=dev-mem
+      - KC_HOSTNAME=localhost
+      - KC_ADMIN=admin
+      - KC_ADMIN_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    command: start-dev
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: users_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  site:
+    build: ./site
+    ports:
+      - "8000:80"
+    depends_on:
+      - keycloak
+      - mysql

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Connexion OpenID</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .btn-primary {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center vh-100">
+        <div class="row w-100">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h2>Connexion OpenID Connect</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-center">Connectez-vous pour accéder à l'application sécurisée.</p>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/150" alt="Logo" class="mb-3 rounded-circle">
+                        </div>
+                        <a href="/switch.php" class="btn btn-primary btn-block w-100">Se connecter avec OpenID</a>
+                    </div>
+                    <div class="card-footer text-center">
+                        <small class="text-muted">En vous connectant, vous acceptez nos <a href="#">Conditions d'utilisation</a>.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
